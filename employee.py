@@ -2,13 +2,13 @@ class Employee:
     first = 'Jon'
     last = 'Doe'
     domain = 'hellogames.com'
-
-    def __init__(self,first,last,domain) -> None:
-        self.first = first
-        self.last = last 
-        self.domain = domain 
+        
+    def __init__(self,*args) -> None:
+        if len(args) == 0: pass
+        if len(args) == 1: self.first = args[0]
+        if len(args) == 2: self.first,self.last = args[0],args[1] 
+        if len(args) == 3: self.first,self.last,self.domain = args[0],args[1],args[2]
         self.email = self.buildemail()       
-
 
     def name_rules(self):
         # names and their cleanup will have the folloing rules
@@ -38,12 +38,14 @@ class Employee:
         emails.append((self.first +self.last + '@'  +self.domain).lower()) 
         return emails
         
-    def mydetails(self) -> None:
+    def empdetails(self) -> None:
         print(f'{self.first} {self.last} may have the following email {self.buildemail()}')
 
+
+
+class Company:
+    
+    def __init__(name:str,low_emp_range:int,high_emp_range:int,industry,low_rev_rng:int,high_rev_rng:int) -> None:
+        super().__init__()
         
 
-
-
-emp2 = Employee('Jehan','Dole','hellogames')
-emp2.mydetails()

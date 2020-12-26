@@ -1,0 +1,61 @@
+When someone says that we need to extract main topics from an article, would you come out the NLP (Natural Language Process) algorithms, Deep Learning with RNN, etc? Well, these are correct answers, but sometimes might be overkilled for a simple problem.
+You may or may not heard of the word cloud. I would say that in some use cases, it is quite sufficient, fancy and quick solution to presenting the main topics of an article, or just a piece of text. Basically, it can do the following things:
+Extracting the keywords of an article
+Visualising the keywords based on the number of occurrences
+Presenting the visualisation in a fancy way
+In this article, I will introduce one of the easiest to use Python library — stylecloud that can generate this word cloud image for us.
+Quick Start
+Image for post
+Photo by Pexels on Pixabay
+Installing the stylecloud library is as simple as any others. Just using pip as follows.
+pip install stylecloud
+Then, let’s do a quick start. You will see that it is extremely easy to generate a fancy word cloud image using this library.
+Someone used to ask me “what does a data architect do?” Of course, the best way of answering this question is to use a list of bullet points to address the common major responsibilities of a general data architect. However, we can also use the word cloud to “visualise” these points in a sense of conceptual.
+Let’s use the terms in Wikipedia. For example, the web page below shows the content of the term data architect.
+Image for post
+We can copy everything on this page and simply save it into a text file. Then, time for the magic.
+
+Therefore, we just give the text file name to the stylecloud library. The word cloud image will be simply generated as we specified for the output_name parameter.
+Image for post
+Very cool. Here is another word cloud I generated for the data engineer role. we can put them together to have a comparison.
+Image for post
+Of course, we cannot expect the one line of Python code can generate something as accurate as something that RNN model gives us. However, I would say it is an excellent and alternative of data visualisation, unstructured data :)
+From the two word cloud images, we can ignore something not making too much sense such as the word “percent” and just focusing on the stuff we are interested in. It is generally can be seen that the data architect role is more an organisational level, designing the data architecture for the project and must have some management skills, whereas the data engineer role is focusing on the engineering and more technical skills are needed.
+Some Advanced Usage
+Image for post
+Photo by Free-Photos on Pixabay
+Have you noticed that both the images we have generated are of flag shape? Yes, that’s one of the most awesome features of stylecloud — masking.
+Let’s say we want to generate a word cloud image for the COVID-19. In this example, I used the page on Wikipedia again. So, how can we make the image looks more appropriate for the topic we are generating for? I don’t want the “flag” mask which is the default of stylecloud because it doesn’t make too much sense for the topic of the virus.
+The stylecloud library makes use FontAwesome as its icon library. FontAwesome is usually used in web design. For example, many of the small icons such as Twitter, Linkedin and etc. are supported by FontAwesome. The basic idea is to use an HTML class to make an HTML elements displayed as a good looking icon. Don’t worry about that if you don’t know web development, you don’t have to know that in this case.
+Here is the link of FontAwesome.
+Font Awesome
+The world's most popular and easiest to use icon set just got an upgrade. More icons. More styles. More Options.
+fontawesome.com
+We can simply search “virus”, and we will get the viruses icon page as follows.
+Image for post
+The only thing need to do is copy the class name fas fa-viruses and use it in the gen_stylecloud() function as follows.
+
+Image for post
+Combine the Stylecloud with the Wikipedia Library
+Image for post
+Photo by geralt on Pixabay
+Now, I gonna show you something more “Pythonic”. One of the amazing characteristics of Python is that there are so many amazing libraries available. In the above examples, we keep using Wikipedia and manually copy the content into a text file. That is not convenient at all.
+In one of my previous article, I have introduced a Python library that can be used out-of-box for scrapping content from Wikipedia.
+Three “Out-of-Box” Web Content Scraping Applications in Python
+You don’t need to learn scraping by using them
+towardsdatascience.com
+We can use these two libraries together!
+First of all, let’s install the Wikipedia Python library.
+pip install wikipedia
+Then, import the library for use.
+import wikipedia
+Thirdly, let’s rock! Here is an example of LinkedIn.
+
+Image for post
+I guess that the number of examples is enough. For the next thing, check out the libraries yourself!
+Summary
+Image for post
+Photo by mat_hias on Pixabay
+In this article, I have introduced another amazing Python library — stylecloud. The most beautiful thing is that it can generate an image of word cloud with mask icons.
+The usage of such a library is very simple. That is, one function can almost achieve everything. However, the logic behind that is not as simple as how we use it. Thanks to everyone who is contributing to the community.
+Life is short, I use Python!

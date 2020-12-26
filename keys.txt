@@ -1,0 +1,1 @@
+Key.tabKey.alt_lKey.spaceKey.backspaceKey.backspaceKey.downbKey.backspaceKey.esc
